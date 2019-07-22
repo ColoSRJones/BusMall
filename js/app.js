@@ -1,10 +1,17 @@
-function draw() {
-  var canvas = document.getElementById('canvas');
-  if (canvas.getContext) {
-    var ctx = canvas.getContext('2d');
+'user strict';
 
-    ctx.fillRect(25, 25, 100, 100);
-    ctx.clearRect(45, 45, 60, 60);
-    ctx.strokeRect(50, 50, 50, 50);
-  }
-}
+//global variables
+var names = ['dog','cat','snake','horse','cow','pig','shark','elephant','whale'];
+var allPics = [];
+var picsHolder = document.getElementById('picsHolder');
+var context = document.getElementById("myChart").getContext("2d");
+var picTag =[document.getElementById('picOne'),
+document.getElementById('picTwo'),
+document.getElementById('picThree')];
+var randomArray =[];
+var randomStored =[];
+var totalClicks = 0;
+var ticks =[];
+
+//constructor function
+
