@@ -53,7 +53,8 @@ function render() {
 		img.setAttribute('data-name',randomProducts[i].name);
 		img.setAttribute('width', '250px');
 		img.setAttribute('height', '250px');
-		img.setAttribute('margin', 'space-between');
+		img.setAttribute('border', 'black', '20px');
+		img.setAttribute('hspace', '20px');
 		img.addEventListener('click', handleVote);
 		productSection.appendChild(img);
 	};
