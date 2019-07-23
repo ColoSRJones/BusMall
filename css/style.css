@@ -9,12 +9,26 @@ body {
 	object-fit: contain;
 }
 #products img {
-  box-shadow: 0 15px 8px -8px black;
+  box-shadow: 0 25px 8px -8px black;
   border-radius: 25%;
   background-image: cover;
-  padding: 5px;
+  background-color: darkblue;
+  padding:  10px;
   border: 5px solid darkorange;
 }
+#results {
+   width: 900px;
+   height: 400px;
+   box-shadow: 0 25px 8px -8px black;
+   border-radius: 15px;
+   background-image: cover;
+   background-color: darkblue;
+   padding:  10px;
+   border: 5px solid darkorange;
+   margin: auto;
+   margin-bottom: 125px;
+}
+  
    
 
 
