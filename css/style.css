@@ -1,45 +1,15 @@
-html {
-    background: #1a1a1d;
+body {
+    background: black;
 	color: white;
-}
-
-/* The header styling */
-
-header {
-	font-size: 34px;
 	text-align: center;
+	margin: 5px;
+	object-fit: contain;
 }
 
-/* Main section */
-
-main {
-    width: 80%; 
-    margin: auto;
+.product {
+   float: left;
+   margin-left: 25px;
 }
 
-main section {
-	margin: 20px;
-}
 
-main section ul{
-	margin: 50px;
-	text-align: center;
-}
-
-main section li{
-    margin: 10px;
-    padding: 5px;
-	display: inline-block;
-}
-
-main section li img {
-    width: 200px;
-    height: 200px;
-}
-
-main article {
-	margin: 10px;
-	text-align: center;
-	font-size: 22px;
-}
 
