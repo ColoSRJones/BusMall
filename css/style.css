@@ -16,9 +16,11 @@ body {
   padding:  10px;
   border: 5px solid darkorange;
 }
-#results {
-   width: 900px;
-   height: 400px;
+#results ul{
+   float: left;
+   width: 300px;
+   height: 700px;
+   list-style: none;
    box-shadow: 0 25px 8px -8px black;
    border-radius: 15px;
    background-image: cover;
@@ -27,6 +29,27 @@ body {
    border: 5px solid darkorange;
    margin: auto;
    margin-bottom: 125px;
+}
+#myChart {
+   float: center;
+   width: 500px;
+   height: 500px;
+   list-style: none;
+   box-shadow: 0 25px 8px -8px black;
+   border-radius: 15px;
+   background-image: cover;
+   background-color: oldlace;
+   padding:  10px;
+   border: 5px solid darkorange;
+   margin: auto;
+   margin-bottom: 125px;
+}
+
+.chart-container {
+  position: relative;
+  margin: auto;
+  height: 80vh;
+  width: 80vw;
 }
   
    
