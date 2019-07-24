@@ -1,5 +1,15 @@
 'user strict';
 
+window.addEventListener('load',function(){
+	loadFromStorage();
+
+	if (allProducts.length === 0){
+		createProducts();
+	}
+	render();
+	renderChart();
+});
+
 //console.log('file is connected');
 
 //global variables
@@ -9,11 +19,11 @@ var allProducts = [];
 var totalClicks = 0;
 
 // //constructor
-function Product(name, src) {
+function Product(name, src, clicks, views) {
 	this.name = name;
 	this.imageUrl = '../img/' + name + '.' + src;
-	this.clicks = 0;
-	this.views = 0;
+	this.clicks = clicks || 0;
+	this.views =  views || 0;
 	allProducts.push(this);
 };
 //Loops
@@ -36,11 +46,11 @@ function render() {
 	randomProducts.push(allProducts[randomProduct()]);
 	randomProducts.push(allProducts[randomProduct()]);
 	while (randomProducts[0] === randomProducts[1]) {
-		randomProducts[1] = randomProduct();
+		randomProducts[1] = allProducts[randomProduct()];
 	}
 	randomProducts.push(allProducts[randomProduct()]);
 	while (randomProducts[2] === randomProducts[0] || randomProducts[2] === randomProducts[1]) {
-		randomProducts[2] = randomProduct();
+		randomProducts[2] = allProducts[randomProduct()];
 	}
 	for (var i = 0; i < randomProducts.length; i++) {
 		console.log(randomProducts[i].name);
@@ -65,6 +75,7 @@ function handleVote(event) {
 		if (allProducts[i].name === productName) {
 			allProducts[i].clicks++;
 			totalClicks++;
+			saveVote();
 			render();
 		}
 	}
@@ -168,9 +179,24 @@ function renderChart() {
 	});
 }
 
-localStorage.setItem('allProducts', JSON.stringify(allProducts));
-var allProducts = JSON.parse(localStorage.getItem('allProducts'));
-console.log(localStorage);
-createProducts();
-//renderChart();
-render();
+function saveVote() {
+	localStorage.setItem('allProducts', JSON.stringify(allProducts));
+	
+}
+function loadFromStorage(){
+	var jsonproductsString = localStorage.getItem('allProducts');
+	
+
+	if (jsonproductsString){
+		var productArray = JSON.parse(jsonproductsString);
+		allProducts = [];
+
+		for (var i = 0; i < productArray.length; i++){
+			var product = productArray[i];
+			console.log(product.imageUrl.substring(product.imageUrl.length-3));
+			new Product(product.name, product.imageUrl.substring(product.imageUrl.length-3), product.clicks, product.views);
+		}
+	}
+}
+
+	
